@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter System</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="data-parent">
+            <div class="inner-parent">
+              <div class="input-field">
+                  <input type="text" placeholder="Search Name" id="name" onkeyup="filter(this.value,'nameFilter')"/>
+              </div>
+              <div class="input-field">
+                <input type="text" placeholder="Search City" id="city" onkeyup="filter(this.value,'cityFilter')"/>
+            </div>
+            <div class="input-field">
+                <select onchange="filter(this.value,'genderFilter')" id="gender">
+                    <option value="">All Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+            <div class="input-field">
+                <select  onchange="filter(this.value,'qualificationFilter')" id="qualification">
+                    <option value="">All Qualifications</option>
+                    <option value="Bachelor">Bachelor's</option>
+                    <option value="Masters">Masters</option>
+                    <option value="PHD">PHD</option>
+                </select>
+            </div>
+            <div class="input-field">
+                <select  onchange="filter(this.value,'roleFilter')" id="role">
+                    <option value="">All Roles</option>
+                    <option value="System Engineer">System Engineer's</option>
+                    <option value="Web designer">Web designer</option>
+                    <option value="System Administrator">System Administrator</option>
+                    <option value="Web Developer">Web Developer</option>
+                    <option value="Trainer">Trainer</option>
+                    <option value="Mechanic">Mechanic</option>
+                    <option value="Web Management">Web Management</option>
+                    <option value="System Security">System Security</option>
+                    <option value="Frontend Developer">Frontend Developer</option>
+                    <option value="Web Maintenance">Web Maintenance</option>
+                </select>
+            </div>
+
+            <button onclick="clearFilter()">Clear filter</button>
+            </div>
+            <h1>All Users</h1>
+            <table>
+                <tr>
+                    <thead>
+                        <th>Name</th>
+                        <th> <span class="sorter" onclick="filter('asc','ageFilter')">&uarr;</span> Age <span class="sorter" onclick="filter('desc','ageFilter')">&darr;</span> 
+                        <p class="sorter" onclick="filter('','ageFilter')">&#10006;</p></th>
+                        <th>City</th>
+                        <th>Gender</th>
+                        <th>Qualification</th>
+                        <th>Company name</th>
+                        <th>Role</th>
+                        <th><span class="sorter" onclick="filter('asc','salaryFilter')">&uarr;</span> 
+                            Salary <span class="sorter" onclick="filter('desc','salaryFilter')">&darr;</span> 
+                            <p class="sorter" onclick="filter('','salaryFilter')">&#10006;</p></th>
+
+                    </thead>
+                    <tbody id="data">
+
+                    </tbody>
+                    
+
+                </tr>
+            </table>
+        </div>
+
+    </div>
+    
+
+    <script src="./index.js"></script>
+</body>
+</html>
